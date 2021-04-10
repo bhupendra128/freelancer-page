@@ -1,6 +1,5 @@
 import React from "react";
 import { StarIcon, HalfStarIcon } from "../../assets/image";
-import "./rating.scss";
 
 const Rating = ({ data, className, isMultiStarRequired }) => {
   const renderRatingStars = () => {
