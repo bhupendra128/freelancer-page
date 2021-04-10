@@ -1,0 +1,38 @@
+.c-specializations {
+  font-size: 11px;
+  line-height: 16px;
+  color: #979797;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 10px;
+    position: absolute;
+  }
+  &.green {
+    &:before {
+      background-color: #87c637;
+    }
+  }
+
+  &.violet {
+    &:before {
+      background-color: #843c90;
+    }
+  }
+
+  &.orange {
+    &:before {
+      background-color: #fd8031;
+    }
+  }
+
+  span {
+    padding-left: 15px;
+  }
+}

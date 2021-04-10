@@ -1,0 +1,73 @@
+.c-filter-modal {
+  .filter-row {
+    .filter-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #c8c7cc;
+      margin-bottom: 15px;
+
+      p,
+      h3 {
+        padding: 0;
+        margin: 0;
+        color: #000000;
+      }
+
+      .heading-3 {
+        padding: 0;
+        margin: 0 0 5px;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: -0.00615385em;
+      }
+
+      .content {
+        padding-bottom: 15px;
+      }
+
+      .description {
+        font-size: 11px;
+        line-height: 13px;
+        letter-spacing: 0.00636364em;
+        opacity: 0.5;
+      }
+    }
+    >div:last-child {
+      border: none;
+      margin-bottom: 40px;
+    }
+  }
+  .btn {
+    &.save {
+      width: 100%;
+      height: 50px;
+      background-color: #007aff;
+      border-radius: 6px;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: -0.016em;
+      font-weight: bold;
+      color: #ffffff;
+    }
+  }
+  .rating {
+    display: flex;
+    .half-star-wrapper {
+      position: relative;
+      .star path {
+        fill: #c4c4c4;
+      }
+      .half-star {
+        position: absolute;
+        left: 0;
+      }
+    }
+    .star {
+      margin-right: 3px;
+      path {
+        fill: #000;
+      }
+    }
+  }
+}

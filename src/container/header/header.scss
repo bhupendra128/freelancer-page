@@ -1,0 +1,22 @@
+.c-header {
+  .header-content {
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .icons {
+      display: inherit;
+    }
+    .heading-2 {
+      margin: 0;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: -0.0241176em;
+      color: #000000;
+    }
+    button {
+      padding-right: 10px;
+    }
+  }
+}

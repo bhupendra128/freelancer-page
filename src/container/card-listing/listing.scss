@@ -1,0 +1,32 @@
+.c-card-listing {
+  padding: 0 15px 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  position: relative;
+
+  .image {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    .c-card {
+      flex-basis: 46%;
+    }
+
+    > div:nth-child(even) {
+      margin-left: 1%;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .c-card {
+      flex-basis: 47%;
+    }
+  }
+}
