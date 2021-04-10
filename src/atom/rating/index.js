@@ -6,7 +6,7 @@ const Rating = ({ data, className, isMultiStarRequired }) => {
   const renderRatingStars = () => {
     let eleStarArr = [];
     if (isMultiStarRequired && data) {
-      const checkForHalfStar = data % 1 != 0;
+      const checkForHalfStar = data % 1 !== 0;
       const updatedValue = checkForHalfStar ? Math.floor(data) + 1: data;
       for (let i = 0; i < updatedValue; i++) {
         if (checkForHalfStar && i + 1 === updatedValue) {
