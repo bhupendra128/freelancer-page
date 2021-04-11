@@ -1,4 +1,3 @@
-import "./App.scss";
 import { AppProvider } from "./context/AppProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ListingPage from "./Page/ListingPage";

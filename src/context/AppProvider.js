@@ -2,8 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { AppContext } from "./AppContext";
 import { data } from "../assets/data";
 
-export const AppProvider = (props) => {
+/**
+ * AppProvider Component that will create store your application state
+ * @param  {object} having all required attributes children
+ */
+
+export const AppProvider = ({children}) => {
   const [listingData, setListingData] = useState([]);
+  const [filterState, setFilterState] = useState([]);
   const initialData = useRef([]);
 
   useEffect(() => {
@@ -11,15 +17,17 @@ export const AppProvider = (props) => {
     setTimeout(() => {
       initialData.current = data;
       setListingData(data);
-    },50);
+    }, 50);
   }, []);
-console.log(initialData.current,'initialData.current');
 
+  const finalObj = {
+    listingData,
+    filterState,
+    initialData: initialData.current,
+    setListingData,
+    setFilterState,
+  };
   return (
-    <AppContext.Provider
-      value={[listingData, setListingData, initialData.current]}
-    >
-      {props.children}
-    </AppContext.Provider>
+    <AppContext.Provider value={finalObj}>{children}</AppContext.Provider>
   );
 };

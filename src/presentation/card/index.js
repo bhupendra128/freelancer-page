@@ -7,6 +7,11 @@ import { Link as RouterLink } from "react-router-dom";
 import Rating from "../../atom/rating";
 import "./card.scss";
 
+/**
+ * Card Component that will create card of the user
+ * @param  {object} having all required attributes data
+ */
+
 const Card = ({ data }) => {
   const {
     first_name,

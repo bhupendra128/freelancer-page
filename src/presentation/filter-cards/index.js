@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useCallback } from "react";
 import Rating from "../../atom/rating";
 import Checkbox from "../../atom/checkbox";
-import "./filter-modal.scss";
+import { AppContext } from "../../context/AppContext";
 import Button from "../../atom/button";
+import "./filter-cards.scss";
 
-const FilterModal = ({ data, handleSelectedFilter }) => {
-  const [selectedCheckbox, setSelectedCheckBox] = useState([]);
+/**
+ * Card Component that will create card of the user
+ * @param  {object} having all required attributes data
+ */
+
+const FilterCards = ({ data, handleSelectedFilter }) => {
+  const { filterState, setFilterState } = useContext(AppContext);
+  const [selectedCheckbox, setSelectedCheckBox] = useState(filterState || []);
 
   const handleCheckboxCallback = ({ id, checked, rating }) => {
     if (checked) {
@@ -16,8 +23,14 @@ const FilterModal = ({ data, handleSelectedFilter }) => {
     }
   };
 
-  const handleSaveFilter = () => {
+  const handleSaveFilter = useCallback(() => {
     handleSelectedFilter(selectedCheckbox);
+    setFilterState(selectedCheckbox);
+  }, [selectedCheckbox, handleSelectedFilter, setFilterState]);
+
+  const checkForDefaultValue = (id) => {
+    const findValue = selectedCheckbox.find((itm) => itm.id === id) || {};
+    return Boolean(Object.keys(findValue).length);
   };
 
   const renderFilter = () => {
@@ -34,6 +47,7 @@ const FilterModal = ({ data, handleSelectedFilter }) => {
           <Rating isMultiStarRequired={true} data={item.rating} />
           <Checkbox
             id={item.id}
+            checked={checkForDefaultValue(item.id)}
             handleCheckboxCallback={(id, checked) =>
               handleCheckboxCallback({ id, checked, rating: item.rating })
             }
@@ -44,7 +58,7 @@ const FilterModal = ({ data, handleSelectedFilter }) => {
   };
 
   return (
-    <div className="c-filter-modal">
+    <div className="c-filter-cards">
       <div className="filter-row">{renderFilter()}</div>
       <Button className="save" onClick={handleSaveFilter}>
         Save
@@ -53,4 +67,4 @@ const FilterModal = ({ data, handleSelectedFilter }) => {
   );
 };
 
-export default FilterModal;
+export default FilterCards;

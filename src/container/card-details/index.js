@@ -10,10 +10,15 @@ import { useParams } from "react-router";
 import { AppContext } from "../../context/AppContext";
 import "./card-details.scss";
 
+/**
+ * CardDetails Component that will create profile detail component
+ */
+
 const CardDetails = () => {
   const { id } = useParams();
-  const [, , initialData] = useContext(AppContext);
+  const { initialData } = useContext(AppContext);
   const handleProceedBtn = () => {
+    //TODO: Add proceed btn logic
     console.log("handleProceedBtn");
   };
 
@@ -64,7 +69,7 @@ const CardDetails = () => {
       </>
     );
   }, [id, initialData]);
-  
+
   return <div className="c-card-details">{renderCardDetails()}</div>;
 };
 

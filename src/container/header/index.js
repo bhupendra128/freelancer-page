@@ -3,16 +3,19 @@ import Button from "../../atom/button";
 import { HamburgerIcon, SearchIcon, FilterIcon } from "../../assets/image";
 import Modal from "../../atom/modal";
 import { filterData } from "../../assets/data";
-import FilterModal from "../../presentation/filter-modal";
+import FilterCards from "../../presentation/filter-cards";
 import { AppContext } from "../../context/AppContext";
 import { ToastContainer, toast } from 'react-toastify';
 import "./header.scss";
 import 'react-toastify/dist/ReactToastify.css';
 
+/**
+ * Header Component that will create header
+ */
+
 const Header = () => {
   const [isModalOpened, setIsModalOpened] = useState(false);
-
-  const [, setListingData,initialData] = useContext(AppContext);
+  const { setListingData,initialData,} = useContext(AppContext);
 
   const handleFilterClick = () => {
     const bodyEle = window && window.document.body;
@@ -62,7 +65,7 @@ const Header = () => {
       </div>
       {isModalOpened && (
         <Modal>
-          <FilterModal
+          <FilterCards
             data={filterData}
             handleSelectedFilter={handleSelectedFilter}
           />

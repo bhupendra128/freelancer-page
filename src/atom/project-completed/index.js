@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * ProjectCompleted Component that will create ProjectCompleted
+ * @param  {object} having all required attributes such as data
+ */
+
 const ProjectCompleted = ({ data }) => {
   return (
     <p className="project-completed">

@@ -1,16 +1,25 @@
 import React from "react";
 import "./checkbox.scss";
 
-const Checkbox = (props) => {
-  const { id, handleCheckboxCallback } = props;
+/**
+ * Checkbox Component that will create checkbox
+ * @param  {object} having all required attributes such as id, handleCheckboxCallback, checked, label
+ */
+
+const Checkbox = ({ id, handleCheckboxCallback, checked, label }) => {
   const handleOnChange = (e) => {
     handleCheckboxCallback(parseInt(e.target.id), e.target.checked);
   };
 
   return (
     <div class="checkbox">
-      <input type="checkbox" id={id} onChange={handleOnChange} />
-      <label for={id}>{props.label || ""}</label>
+      <input
+        type="checkbox"
+        id={id}
+        onChange={handleOnChange}
+        checked={checked}
+      />
+      <label for={id}>{label || ""}</label>
     </div>
   );
 };

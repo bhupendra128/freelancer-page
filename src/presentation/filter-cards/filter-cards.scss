@@ -1,4 +1,4 @@
-.c-filter-modal {
+.c-filter-cards {
   .filter-row {
     .filter-item {
       display: flex;
@@ -33,7 +33,7 @@
         opacity: 0.5;
       }
     }
-    >div:last-child {
+    > div:last-child {
       border: none;
       margin-bottom: 40px;
     }
