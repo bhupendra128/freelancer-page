@@ -8,6 +8,7 @@ import Specializations from "../../atom/specializations";
 import Button from "../../atom/button";
 import { useParams } from "react-router";
 import { AppContext } from "../../context/AppContext";
+import {Link as RouterLink} from 'react-router-dom';
 import "./card-details.scss";
 
 /**
@@ -46,9 +47,9 @@ const CardDetails = () => {
     return (
       <>
         <Image image={img} />
-        <Link link="/" className="image-top">
+        <RouterLink to="/" className="image-top">
           <BackIcon />
-        </Link>
+        </RouterLink>
         <Rating data={avg_ratings} />
         <div className="card-contents">
           <h2 className="heading-2">{fullName}</h2>
