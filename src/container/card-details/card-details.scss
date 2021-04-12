@@ -1,5 +1,7 @@
 .c-card-details {
   position: relative;
+  height: 100vh;
+  background-color: #fff;
   .image {
     max-height: 275px;
     width: 100%;
@@ -134,5 +136,8 @@
         }
       }
     }
+  }
+  @media only screen and (min-width: 1024px) {
+    background-color: #efefef;
   }
 }
